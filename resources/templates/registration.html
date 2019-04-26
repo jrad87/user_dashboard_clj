@@ -1,0 +1,43 @@
+{% extends "external.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-4">
+    <fieldset>
+      <legend>Register</legend>
+      {% if errors %}
+      <ul>
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <form method="POST" action="register">
+        {% csrf-field %}
+        <div>
+          <label>First Name: </label>
+          <input type="text" name="first_name">
+        </div> 
+        <div>
+          <label>Last Name: </label>
+          <input type="text" name="last_name">
+        </div>
+        <div>
+          <label>Username: </label>
+          <input type="text" name="username">
+        </div>
+        <div>
+          <label>Password: </label>
+          <input type="password" name="password">
+        </div>
+        <div>
+          <label>Confirm Password: </label>
+          <input type="password" name="confirmPW">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <p>Already have an account?
+        <a href="{{servlet-context}}/login">Log in here</a>
+      </p>
+  </div>
+</div>
+{% endblock %}

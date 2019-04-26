@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to user_dashboard</title>
+
+    <!-- styles -->
+    {% style "/assets/bootstrap/css/bootstrap.min.css" %}
+    {% style "/assets/font-awesome/css/font-awesome.min.css" %}
+
+    {% style "/css/screen.css" %}
+  </head>
+  <body>
+     
+    <nav class="navbar navbar-dark bg-primary" role="navigation">
+      <div class="container">
+        {% block navbar %}  
+        {% endblock %}
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </main>
+    <footer class="footer navbar-dark bg-primary">
+      <div class="container">
+        {% include "footer.html" %}
+      </div>
+    </footer>
+    <!-- scripts -->
+    {% script "/assets/jquery/jquery.min.js" %}
+    {% script "/assets/tether/dist/js/tether.min.js" %}
+    {% script "/assets/bootstrap/js/bootstrap.min.js" %}
+
+    <script type="text/javascript">
+      var context = "{{servlet-context}}";
+    </script>
+    {% block page-scripts %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<button class="navbar-toggler hidden-sm-up"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsing-navbar">
+  &#9776;
+</button>
+<div class="collapse navbar-toggleable-xs" id="collapsing navbar">
+  <div class="row">
+    <div class="col-md-10">
+      <a class="navbar-brand" href="{{servlet-context}}/">Dashboard</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a href="{{servlet-context}}/dashboard"
+             class="nav-link {% ifequal page 'dashboard.html' %}active{% endifequal %}">
+            home
+          </a> 
+        </li>
+        <li class="nav-item">
+          <a href="{{servlet-context}}/users/{{current-user.id}}"
+             class="nav-link {% ifequal page '' %}active{% endifequal %}">
+            profile page 
+          </a>
+      </ul>
+    </div> 
+    <div class="col-md-2">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{servlet-context}}/logout">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

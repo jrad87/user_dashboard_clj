@@ -1,0 +1,28 @@
+{% extends "external.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Welcome to User Dashboard</h2>
+    <p>
+      This project was built as a follow-up to completing studies at Coding Dojo.
+      It is an exploration of functional programming using the Luminus web framework,
+      powered by clojure and PostgreSQL.
+    </p>
+    <a href="{{servlet-context}}/register">Start here</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <h2>Manage Your Profile</h2>
+    <p>Edit your personal information and login credentials</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Send Messages</h2>
+    <p>Leave message for other users and reply to messages on your profile</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Manage Users</h2>
+    <p>Admins may edit details of other users</p>
+  </div>
+</div>
+{% endblock %}
